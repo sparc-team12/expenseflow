@@ -1,0 +1,30 @@
+features:
+  - id: FEAT-CLAIM-SUBMIT
+    name: Expense claim submission
+    jira:
+      epic: EXP-1
+      stories: [EXP-11, EXP-12]
+    prd:
+      page: "Claim Submission PRD"
+      anchor: claim-submission-rules
+    code:
+      domain: [backend/app/domain/claim_rules.py]
+      api: [backend/app/main.py]
+      ui: [frontend/index.html, frontend/app.js]
+    tests: [backend/tests/test_claim_rules.py]
+
+  - id: FEAT-APPROVAL
+    name: Manager approval workflow
+    jira:
+      epic: EXP-2
+      stories: [EXP-21]
+    prd:
+      page: "Approval Workflow PRD"
+      anchor: approval-transitions
+    code:
+      domain:
+        - backend/app/domain/claim_rules.py
+        - backend/app/domain/claim_store.py
+      api: [backend/app/main.py]
+      ui: [frontend/index.html, frontend/app.js]
+    tests: [backend/tests/test_claim_rules.py]

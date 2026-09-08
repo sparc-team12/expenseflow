@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ExpenseFlow</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    input, select, textarea, button { font: inherit; padding: 8px; margin: 4px 0; width: 100%; box-sizing: border-box; }
+    button { cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+    .error { color: #b00; }
+  </style>
+</head>
+<body>
+  <h1>ExpenseFlow</h1>
+
+  <!-- Feature: FEAT-CLAIM-SUBMIT -->
+  <h2>Submit a claim</h2>
+  <input id="employee" placeholder="Employee name">
+  <input id="amount" type="number" placeholder="Amount">
+  <select id="category">
+    <option>Food</option>
+    <option>Lodging</option>
+    <option>Supplies</option>
+  </select>
+  <textarea id="description" placeholder="Description"></textarea>
+  <button onclick="submitClaim()">Submit</button>
+  <ul id="errors" class="error"></ul>
+
+  <!-- Feature: FEAT-APPROVAL -->
+  <h2>Claims</h2>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Employee</th><th>Amount</th><th>Category</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
